@@ -1,0 +1,86 @@
+{% load static%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<title>Jb News</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css" media="all" />
+<!--[if IE 6]>
+<link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" />
+<![endif]-->
+<link rel="stylesheet" href="{% static 'js/fancybox/jquery.fancybox-1.3.1.css'%}" type="text/css" media="screen" />
+<script type="text/javascript" src="{% static ' js/jquery-1.4.2.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.jcarousel.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/fancybox/jquery.fancybox-1.3.1.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-func.js'%}"></script>
+</head>
+<body>
+<!-- START PAGE SOURCE -->
+<div id="shell">
+  <div id="header" class="big-box">
+    <div class="bg-bottom">
+      <h1 id="logo"><a href="#">JB News</a></h1>
+      <div id="search">
+        <form action="#" method="POST">
+          {% csrf_token%}
+          <fieldset>
+          <input type="text" name="string" value="" class="field" />
+          <input type="submit" value="SEARCH" class="submit" />
+          </fieldset>
+        </form>
+      </div>
+      <div class="cl">&nbsp;</div>
+    </div>
+  </div>
+  <div id="navigation">
+    
+    <div class="cl">&nbsp;</div>
+  </div>
+  {% for title,desc,i in my_list%}
+  <div id="main" class="big-box">
+
+ <div class="bg-top">
+      <div class="bg-bottom">
+        <div id="big-slider" class="slider">
+          <div class="slider-holder">
+            <ul>
+              <li>
+                <div class="image"> <img src="{{i}}" alt="" /> </div>
+                <div class="data">
+                  <h2>{{title}}</h2>
+                  <span class="text">{{desc}}</span>
+                  <br>
+                  
+                  
+                </div>
+              </li>
+              <li>
+                
+                
+              </li>
+              <li>
+               
+              </li>
+            </ul>
+            <div class="cl">&nbsp;</div>
+          </div>
+          <a href="#" class="slider-link">View</a> </div>
+        
+        
+        
+      </div>
+    </div>
+  
+
+
+{%endfor%}
+</div>
+  <div id="footer">
+    <p class="left">Copyright &copy; 2022 <a href="#">James Bengi</a> - All Rights Reserved</p>
+    
+    <div class="cl">&nbsp;</div>
+  </div>
+</div>
+<!-- END PAGE SOURCE -->
+</body>
+</html>
